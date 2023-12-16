@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: API de registro de clientes
+  description: API para registrar clientes en el sistema de taxis
+  version: 1.0.0
+
+paths:
+  /api/register:
+    post:
+      operationId: register
+      tags:
+        - Clientes
+      summary: Registrar un cliente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                apellido:
+                  type: string
+                dni:
+                  type: string
+                telefono:
+                  type: string
+      responses:
+        200:
+          description: Cliente registrado correctamente
+        400:
+          description: Error en los datos de entrada
